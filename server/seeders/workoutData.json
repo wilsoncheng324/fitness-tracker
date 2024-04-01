@@ -1,0 +1,17 @@
+[
+    {
+        "name": "dumbbell",
+        "weight": 5,
+        "reps": 5
+    },
+    {
+        "name": "treadmill",
+        "weight": 6,
+        "reps": 6
+    },
+    {
+        "name": "bodyweight",
+        "weight": 7,
+        "reps": 7
+    }
+]
