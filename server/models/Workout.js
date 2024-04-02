@@ -3,7 +3,7 @@ const { Schema, model } = require('mongoose');
 const workoutSchema = new Schema({
     name: {
       type: String,
-      required: true,
+      required: true, // @TODO: this is required here, but not in your graphQL typedefs. Your models and typedefs should match
       unique: true,
       trim: true,
     },
