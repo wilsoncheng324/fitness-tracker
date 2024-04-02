@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const JWT_SECRET = 'super_secret_key';
+const JWT_SECRET = 'super_secret_key'; // @TODO: Good job changing this from the default. Next level up will be to pull this from process.ENV.JWT_SECRET environment variable using .env file
 
 // Function to sign the token
 const signToken = ({ _id }) => jwt.sign({ _id }, JWT_SECRET, { expiresIn: '1d' });
