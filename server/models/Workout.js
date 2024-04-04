@@ -9,11 +9,12 @@ const workoutSchema = new Schema({
     },
     weight: {
         type: Number,
-        required: true,
+        required: true
     },
     reps: {
         type: Number,
-        required: true,
+        required: true
+
     },
     
     
@@ -22,8 +23,3 @@ const workoutSchema = new Schema({
   const Workout = model('Workout', workoutSchema);
   
   module.exports = Workout;
-
-//   school > class > professor
-//  user > workout
-
-// dumbbell, tredmill, bodyweight
