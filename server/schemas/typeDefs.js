@@ -35,6 +35,3 @@ const typeDefs = `
 `;
 
 module.exports = typeDefs;
-
-// addActivity(userId: ID!, activity: String!): User
-//     removeActivity(userId: ID!, activity: String!): User

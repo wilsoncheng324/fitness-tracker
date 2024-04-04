@@ -14,7 +14,7 @@ const resolvers = {
       if (context.user) {
         return await User.findById(context.user._id);
   }
-  // throw new AuthenticationError('Not logged in');
+  throw new AuthenticationError('Not logged in');
 },
   },
   Mutation: {
