@@ -3,7 +3,8 @@
         "name": "wilson",
         "username": "wilsoncheng",
         "email": "wilsoncheng@gmail.com",
-        "password": "12345678"
+        "password": "12345678",
+        "activities": []
     },
     {
         "name": "test",

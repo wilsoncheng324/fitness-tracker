@@ -1,23 +1,20 @@
 const {AuthenticationError} = require('apollo-server-express');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const { User, Workout } = require('../models');
+const { User } = require('../models');
 
 const JWT_SECRET = 'super_secret_key';
 
 const resolvers = {
   Query: {
     users: async () => {
-      return await User.find({}).populate('workout');
-    },
-    workouts: async () => {
-      return await Workout.find({});
+      return await User.find({});
     },
     currentUser: async (_, args, context) => {
       if (context.user) {
-        return await User.findById(context.user._id).populate('workout');
+        return await User.findById(context.user._id);
   }
-  throw new AuthenticationError('Not logged in');
+  // throw new AuthenticationError('Not logged in');
 },
   },
   Mutation: {
@@ -45,6 +42,28 @@ const resolvers = {
 
       return { token, user };
     },
+    
+    addActivity: async (parent, { userId, activity }) => {
+      return User.findOneAndUpdate(
+        { _id: userId },
+        {
+          $addToSet: { activities: activity },
+        },
+        {
+          new: true,
+          runValidators: true,
+        }
+      );
+      
+    },
+    removeActivity: async (parent, { userId, activity }) => {
+      return User.findOneAndUpdate(
+        { _id: userId },
+        { $pull: { activities: activity } },
+        { new: true }
+      );
+    },
+
     logOut: async (_, args, context) => {
       if (context.user) {
         return true;

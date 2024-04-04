@@ -3,15 +3,17 @@ const { Schema, model } = require('mongoose');
 const workoutSchema = new Schema({
     name: {
       type: String,
-      required: true, // @TODO: this is required here, but not in your graphQL typedefs. Your models and typedefs should match
+      required: true,
       unique: true,
       trim: true,
     },
     weight: {
-        type: Number
+        type: Number,
+        required: true
     },
     reps: {
-        type: Number
+        type: Number,
+        required: true
     },
     
     
@@ -20,8 +22,3 @@ const workoutSchema = new Schema({
   const Workout = model('Workout', workoutSchema);
   
   module.exports = Workout;
-
-//   school > class > professor
-//  user > workout
-
-// dumbbell, tredmill, bodyweight

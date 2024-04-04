@@ -3,29 +3,30 @@ const { Schema, model } = require('mongoose');
 const userSchema = new Schema({
     name: {
       type: String,
-      required: true, // @TODO: this is required here, but not in your graphQL typedefs. Your models and typedefs should match
+      required: true, 
       unique: true,
       trim: true,
     },
     username: {
         type: String,
-        required: true, // @TODO: this is required here, but not in your graphQL typedefs. Your models and typedefs should match
+        required: true, 
         unique: true,
       },
     email: {
         type: String,
-        required: true, // @TODO: this is required here, but not in your graphQL typedefs. Your models and typedefs should match
+        required: true,
         unique: true,
-        // match: [/.+@.+\..+/, 'Must use a valid email address'],
+        match: [/.+@.+\..+/, 'Must use a valid email address'],
     },
     password: {
         type: String,
-        required: true, // @TODO: this is required here, but not in your graphQL typedefs. Your models and typedefs should match
+        required: true,
+        minlength: 8
       },
-    workout: [
+    activities: [
       {
-        type: Schema.Types.ObjectId,
-        ref: 'Workout'
+        type: String,
+        trim: true
       },
     ],
   });
