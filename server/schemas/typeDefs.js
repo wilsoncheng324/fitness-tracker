@@ -1,21 +1,21 @@
 const typeDefs = `
   type User {
     _id: ID
-    name: String
-    username: String
-    email: String
-    workout: Workout
+    name: String! 
+    username: String! 
+    email: String!  
+    workout: [Workout]
   }
 
   type Workout {
     _id: ID
-    name: String
+    name: String! 
     weight: Int
     reps: Int
   }
 
   type AuthPayload {
-    token: String
+    token: String!
     user: User
   }
 

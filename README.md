@@ -1,4 +1,5 @@
-# fitness-tracker
+## Fitness-tracker
+
 
 ## Table of Contents
   - [Description](#project-description)
@@ -37,7 +38,6 @@ wilsoncheng0324@gmail.com
 ## Contributing
 Open to suggestions!
 [MMullen4](https://github.com/MMullen4)
-
 
 
 ## Authors and acknowledgment
