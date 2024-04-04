@@ -1,6 +1,7 @@
 const typeDefs = `
   type User {
     _id: ID
+
     name: String!
     username: String!
     email: String!
@@ -13,6 +14,7 @@ const typeDefs = `
     reps: Int!
     workoutTime: Int!
     date: String!
+
   }
 
   type AuthPayload {
