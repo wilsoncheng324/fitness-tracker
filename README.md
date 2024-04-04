@@ -1,4 +1,53 @@
-# fitness-tracker
+## Fitness-tracker
 
 
-# TODO: Please add a readme that will tell your group members the proper way to run the project. It should include instructions to also 'git pull && npm install' before working on the project, as well as appropriate instructions for starting the dev environment. Also please include the link to the live site here now that you have it
+## Table of Contents
+  - [Description](#project-description)
+  - [Visuals](#visuals)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Support](#support)
+  - [Contribution](#contribution)
+  - [Authors & Acknowledgement](#authors-and-acknowledgment)
+  - [License](#license)
+  - [Project](#project-status)
+
+
+## Description
+
+
+
+## Visuals
+
+
+
+## Installation
+The site employs React and is deployed on Render with a MongoDB database.
+
+
+## Usage
+
+
+## Support
+Please reach out to us with any questions - 
+matt@mmcprintpackaging.com
+ferewar@hotmail.com
+wilsoncheng0324@gmail.com
+
+
+## Contributing
+Open to suggestions!
+[MMullen4](https://github.com/MMullen4)
+
+
+## Authors and acknowledgment
+Matt Mullen, Wilson Cheng & Fernando Guerrero
+plus UCLA tutors and Bootcamp lessons
+
+
+## Licence
+MIT
+  [![Generic badge](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/.)
+
+
+## Project

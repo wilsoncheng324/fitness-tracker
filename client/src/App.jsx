@@ -11,8 +11,6 @@ function App() {
     <>
  <Sidebar />
     <main className="">
-     
-      
       </main>
     </>
   )
