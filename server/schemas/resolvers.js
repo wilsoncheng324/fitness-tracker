@@ -43,7 +43,15 @@ const resolvers = {
       return { token, user };
     },
     
-    addActivity: async (parent, { userId, activity }) => {
+    addActivity: async (parent, { userId, workout, reps, workoutTime, date }) => {
+
+      const activity = {
+        workout: workout,
+        reps: reps,
+        workoutTime: workoutTime,
+        date: date
+      };
+
       return User.findOneAndUpdate(
         { _id: userId },
         {
@@ -56,7 +64,13 @@ const resolvers = {
       );
       
     },
-    removeActivity: async (parent, { userId, activity }) => {
+    removeActivity: async (parent, { userId, workout, reps, workoutTime, date }) => {
+      const activity = {
+        workout: workout,
+        reps: reps,
+        workoutTime: workoutTime,
+        date: date
+      };
       return User.findOneAndUpdate(
         { _id: userId },
         { $pull: { activities: activity } },

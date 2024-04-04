@@ -24,9 +24,25 @@ const userSchema = new Schema({
         minlength: 8
       },
     activities: [
-      {
-        type: String,
-        trim: true
+      { 
+        workout:{
+          type: String,
+          required: true,
+          trim: true,
+        },
+        reps: {
+          type: Number,
+          required: true
+        },
+        workoutTime: {
+            type: Number,
+            required: true
+        },
+        date: {
+            type: Date,
+            default: Date.now
+        },
+        
       },
     ],
   });
