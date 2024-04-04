@@ -3,6 +3,7 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const { User, Workout } = require('../models');
 
+
 const JWT_SECRET = 'super_secret_key';
 
 const resolvers = {
@@ -22,6 +23,15 @@ const resolvers = {
   },
   Mutation: {
     signUp: async (_, { name, username, email, password }) => {
+      const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+      if (!emailRegex.test(email)) {
+        throw new AuthenticationError('You must use a valid email address');
+      }
+      const existingUser = await User.findOne({ $or: [{ username }, { email }] });
+      if (existingUser) {
+        throw new AuthenticationError('Username or email already exists');
+      }
+
       const hashedPassword = await bcrypt.hash(password, 10);
       const user = new User({ name, username, email, password: hashedPassword });
       const savedUser = await user.save();
