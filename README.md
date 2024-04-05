@@ -1,5 +1,5 @@
 ## Fitness-tracker
-
+A website to log, save and track your workouts. 
 
 ## Table of Contents
   - [Description](#project-description)
@@ -14,15 +14,14 @@
 
 
 ## Description
-
-
+The site allows the user to sign in or sign up as a new user, then start a workout activity and log in the date, exercise, duration, and weight (if any) used.  The information is stored into a Mongo DB that the user can review in a User Dashboard.  New activities or exercises need to be entered before recording them into the Workout database.  
 
 ## Visuals
-
+The User Dashboard displays the user's profile info along with their activity history and detailed activity log information. 
 
 
 ## Installation
-The site employs React and is deployed on Render with a MongoDB database.
+The site employs front-end React and back-end GraphQL.  It is deployed on Render with a MongoDB database.  Styling is enhanced through Tailwind and Flowbite templates.
 
 
 ## Usage
@@ -30,14 +29,15 @@ The site employs React and is deployed on Render with a MongoDB database.
 
 ## Support
 Please reach out to us with any questions - 
-matt@mmcprintpackaging.com
-ferewar@hotmail.com
+matt@mmcprintpackaging.com,
+ferewar@hotmail.com,
 wilsoncheng0324@gmail.com
 
 
 ## Contributing
 Open to suggestions!
 [MMullen4](https://github.com/MMullen4)
+
 
 
 ## Authors and acknowledgment
@@ -51,3 +51,4 @@ MIT
 
 
 ## Project
+https://fitness-tracker-57xn.onrender.com

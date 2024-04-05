@@ -1,17 +1,18 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import * as React from 'react'
+import { createRoot } from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
 import './App.css'
-import { Sidebar } from './components/Sidebar'
+
+import { Outlet } from 'react-router-dom';  
+
 
 function App() {
- 
-
   return (
     <>
- <Sidebar />
-    <main className="">
-      </main>
+      <main className="">
+        <Outlet />
+        </main>
     </>
   )
 }
