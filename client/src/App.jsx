@@ -9,7 +9,7 @@ function App() {
 
   return (
     <>
- <Sidebar />
+    <Sidebar />
     <main className="">
       </main>
     </>

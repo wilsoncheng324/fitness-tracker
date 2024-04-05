@@ -2,16 +2,16 @@
     {
         "name": "dumbbell",
         "weight": 5,
-        "reps": 5
+        "reps": 6
     },
     {
         "name": "treadmill",
         "weight": 6,
-        "reps": 6
+        "reps": 7
     },
     {
         "name": "bodyweight",
         "weight": 7,
-        "reps": 7
+        "reps": 8
     }
 ]

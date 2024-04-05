@@ -14,10 +14,7 @@ const workoutSchema = new Schema({
     reps: {
         type: Number,
         required: true
-
-    },
-    
-    
+    }
   });
   
   const Workout = model('Workout', workoutSchema);

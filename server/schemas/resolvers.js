@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken');
 const { User } = require('../models');
 
 
-const JWT_SECRET = 'super_secret_key';
+const JWT_SECRET = 'super_secret_key'; // @TODO: pull from process.env.JWT_SECRET (use .env)
 
 const resolvers = {
   Query: {

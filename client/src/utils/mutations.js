@@ -41,7 +41,7 @@ export const ADD_ACTIVITY = gql `{
 }
 `;
 
-
+// @TODO: Probably don't need to send all this data just to remove activity. Just need to send the userId and activityID (or give the workouts an ID if they don't have one) 
 export const REMOVE_ACTIVITY = gql `{
     mutation removeActivity($userId: ID!, $workout: String!, $reps: Int!, $workoutTime: Int!, $date: String!) {
         removeActivity(userId: $userId, workout: $workout, reps: $reps, workoutTime: $workoutTime, date: $date) {

@@ -1,5 +1,6 @@
 ## Fitness-tracker
 
+#TODO: please also add instructions for running your project for your other group members here and for future contributors. It should include instructions for going from initial clone of the repo to having the project running
 
 ## Table of Contents
   - [Description](#project-description)
