@@ -1,4 +1,23 @@
-export const SignupForm = ({ email, password }) => {
+import { useState } from "react";
+import { useMutation } from "@apollo/client";
+import { SIGN_UP } from "../utils/mutations";
+
+export const SignupForm = () => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const [signUp, { error }] = useMutation(SIGN_UP);
+
+    const handleFormSubmit = async (event) => {
+        event.preventDefault();
+        try {
+            const { data } = await signUp({
+                variables: { email, password },
+            });
+        } catch (err) {
+            console.error('Error signing up: ', err);
+        }
+    };
 
     return (
 
