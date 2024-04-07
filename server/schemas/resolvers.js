@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken');
 const { User } = require('../models');
 
 
-const JWT_SECRET = 'super_secret_key';
+const JWT_SECRET = 'super_secret_key';// @TODO: pull from process.env.JWT_SECRET (use .env)
 
 const resolvers = {
   Query: {
@@ -19,7 +19,7 @@ const resolvers = {
 },
   },
   Mutation: {
-    signUp: async (_, { name, username, email, password }) => {
+    signUp: async (_, { name, username, email, password, age, height_feet, height_inch, weight }) => {
       const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
       if (!emailRegex.test(email)) {
         throw new AuthenticationError('You must use a valid email address');
@@ -30,7 +30,7 @@ const resolvers = {
       }
 
       const hashedPassword = await bcrypt.hash(password, 10);
-      const user = new User({ name, username, email, password: hashedPassword });
+      const user = new User({ name, username, email, password: hashedPassword, age, height_feet, height_inch, weight });
       const savedUser = await user.save();
       
       const token = jwt.sign({ _id: savedUser._id }, JWT_SECRET, { expiresIn: '1d' });
@@ -53,40 +53,34 @@ const resolvers = {
       return { token, user };
     },
     
-    addActivity: async (parent, { userId, workout, reps, workoutTime, date }) => {
+    addActivity: async (parent, { userId, name, reps, workoutDurationTime }) => {
 
       const activity = {
-        workout: workout,
+        name: name,
         reps: reps,
-        workoutTime: workoutTime,
-        date: date
+        workoutDurationTime: workoutDurationTime,
       };
 
       return User.findOneAndUpdate(
         { _id: userId },
-        {
-          $addToSet: { activities: activity },
-        },
-        {
-          new: true,
-          runValidators: true,
-        }
+        {$addToSet: { activities: activity }},
+        {new: true}
       );
       
     },
-    removeActivity: async (parent, { userId, workout, reps, workoutTime, date }) => {
-      const activity = {
-        workout: workout,
-        reps: reps,
-        workoutTime: workoutTime,
-        date: date
-      };
-      return User.findOneAndUpdate(
-        { _id: userId },
-        { $pull: { activities: activity } },
-        { new: true }
-      );
-    },
+    // removeActivity: async (parent, { userId, workout, reps, workoutTime, date }) => {
+    //   const activity = {
+    //     workout: workout,
+    //     reps: reps,
+    //     workoutTime: workoutTime,
+    //     date: date
+    //   };
+    //   return User.findOneAndUpdate(
+    //     { _id: userId },
+    //     { $pull: { activities: activity } },
+    //     { new: true }
+    //   );
+    // },
 
     logOut: async (_, args, context) => {
       if (context.user) {

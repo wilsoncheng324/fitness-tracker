@@ -8,7 +8,7 @@ const userData = require('./userData.json');
 
 db.once('open', async () => {
   // clean database
-  // await cleanDB("User", "users");
+  await cleanDB("User", "users");
   // await cleanDB("Workout", "workouts");
   await User.create(userData);
   // bulk create each model

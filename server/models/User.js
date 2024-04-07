@@ -1,10 +1,9 @@
 const { Schema, model } = require('mongoose');
-
+const dateFormat = require('../utils/dateFormat');
 const userSchema = new Schema({
     name: {
       type: String,
       required: true, 
-      unique: true,
       trim: true,
     },
     username: {
@@ -16,16 +15,39 @@ const userSchema = new Schema({
         type: String,
         required: true,
         unique: true,
-        match: [/.+@.+\..+/, 'Must use a valid email address'],
-    },
+        match: [/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+        'Must use a valid email address'],
+        },
     password: {
         type: String,
         required: true,
         minlength: 8
       },
+    age: {
+      type: Number,
+      required: true,
+    },
+    height_feet: {
+        type: Number,
+        required: true,
+        min: 1,
+        max: 7
+    },
+    height_inch: {
+      type: Number,
+      required: true,
+      min: 0,
+      max: 12
+    },
+    weight: {
+      type: Number,
+      required: true,
+      min: 1,
+      max: 300
+    },
     activities: [
       { 
-        workout:{
+        name:{
           type: String,
           required: true,
           trim: true,
@@ -34,13 +56,14 @@ const userSchema = new Schema({
           type: Number,
           required: true
         },
-        workoutTime: {
-            type: Number,
-            required: true
+        workoutDurationTime: {
+          type: Number,
+          required: true
         },
-        date: {
+        datetime: {
             type: Date,
-            default: Date.now
+            default: Date.now,
+            get: (timestamp) => dateFormat(timestamp),
         },
         
       },

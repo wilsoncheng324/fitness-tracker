@@ -4,18 +4,29 @@
         "username": "wilsoncheng",
         "email": "wilsoncheng@gmail.com",
         "password": "12345678",
-        "activities": []
+        "age": 25,
+        "height_feet": 5,
+        "height_inch": 7,
+        "weight": 140
     },
     {
         "name": "test",
         "username": "testtest",
         "email": "test@gmail.com",
-        "password": "12345678"
+        "password": "12345678",
+        "age": 30,
+        "height_feet": 4,
+        "height_inch": 5,
+        "weight": 115
     },
     {
         "name": "test2",
         "username": "test2test2",
         "email": "test2@gmail.com",
-        "password": "12345678"
+        "password": "12345678",
+        "age": 34,
+        "height_feet": 6,
+        "height_inch": 6,
+        "weight": 180
     }
 ]

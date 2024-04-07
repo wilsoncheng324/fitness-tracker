@@ -1,19 +1,23 @@
 const typeDefs = `
   type User {
     _id: ID
-
-    name: String!
-    username: String!
-    email: String!
-    password: String!
+    name: String
+    username: String
+    email: String
+    password: String
+    age: Int
+    height_feet: Int
+    height_inch: Int
+    weight: Int
     activities: [Activity]!
   }
 
   type Activity {
-    workout: String!
-    reps: Int!
-    workoutTime: Int!
-    date: String!
+    _id: ID
+    name: String
+    reps: Int
+    workoutDurationTime: Int
+    datetime: String
 
   }
 
@@ -28,10 +32,10 @@ const typeDefs = `
   }
 
   type Mutation {
-    signUp(name: String!, username: String!, email: String!, password: String!): AuthPayload
+    signUp(name: String!, username: String!, email: String!, password: String!, age: Int!, height_feet: Int!, height_inch: Int!, weight: Int!): AuthPayload
     signIn(username: String!, password: String!): AuthPayload    
-    addActivity(userId: ID!, workout: String! reps: Int!, workoutTime: Int!, date: String!): User
-    removeActivity(userId: ID!, workout: String! reps: Int!, workoutTime: Int!, date: String!): User
+    addActivity(userId: ID!, name: String! reps: Int!, workoutDurationTime: Int!): User
+    # removeActivity(userId: ID!, activityId: ID!): User
     logOut: Boolean
   }
 `;
