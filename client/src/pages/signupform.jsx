@@ -31,7 +31,6 @@ const SignupForm = () => {
 
     return (
         
-
         <div className="flex justify-center items-center min-h-screen bg-gray-100 dark:bg-gray-900">
             <div className="w-full max-w-md p-8 bg-white border border-gray-200 rounded-lg shadow-md sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
                 <form className="space-y-6" onSubmit={handleFormSubmit}>

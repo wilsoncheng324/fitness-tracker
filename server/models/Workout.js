@@ -17,7 +17,6 @@ const workoutSchema = new Schema({
 
     },
     
-    
   });
   
   const Workout = model('Workout', workoutSchema);
