@@ -1,8 +1,9 @@
+require('dotenv').config();
 const {AuthenticationError} = require('apollo-server-express');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const { User } = require('../models');
-require('dotenv').config();
+
 
 const JWT_SECRET = process.env.JWT_SECRET;
 
@@ -19,18 +20,18 @@ const resolvers = {
 },
   },
   Mutation: {
-    signUp: async (_, { name, username, email, password }) => {
+    signUp: async (_, {email, password }) => {
       const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
       if (!emailRegex.test(email)) {
         throw new AuthenticationError('You must use a valid email address');
       }
-      const existingUser = await User.findOne({ $or: [{ username }, { email }] });
+      const existingUser = await User.findOne({ $or: [{ email }] });
       if (existingUser) {
-        throw new AuthenticationError('Username or email already exists');
+        throw new AuthenticationError('Email already exists');
       }
 
       const hashedPassword = await bcrypt.hash(password, 10);
-      const user = new User({ name, username, email, password: hashedPassword });
+      const user = new User({ email, password: hashedPassword });
       const savedUser = await user.save();
       
       const token = jwt.sign({ _id: savedUser._id }, JWT_SECRET, { expiresIn: '1d' });
@@ -47,7 +48,7 @@ const resolvers = {
       if (!correctPw) {
         throw new AuthenticationError('Incorrect password');
       }
-
+      console.log('JWT_SECRET:', JWT_SECRET);
       const token = jwt.sign({ _id: user._id }, JWT_SECRET, { expiresIn: '1d' });
 
       return { token, user };
