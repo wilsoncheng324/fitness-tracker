@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import { ApolloProvider } from '@apollo/client'
 import { BrowserRouter, Route } from 'react-router-dom'
 import App from './App.jsx'
-
+import { AuthProvider } from './contexts/AuthContext';
 import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
@@ -56,6 +56,8 @@ const router = createBrowserRouter([ // define the routes
 ]);
 ReactDOM.createRoot(document.getElementById('root')).render(
   <ApolloProvider client={client}>
-  <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </ApolloProvider>
 )

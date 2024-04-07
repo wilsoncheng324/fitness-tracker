@@ -1,12 +1,16 @@
 import { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { SIGN_UP } from "../utils/mutations";
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../contexts/AuthContext';
 
 const SignupForm = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-
+    const [errorMessage, setErrorMessage] = useState('');
+    const navigate = useNavigate();
     const [signUp, { error }] = useMutation(SIGN_UP);
+    const { login } = useAuth();
 
     const handleFormSubmit = async (event) => {
         event.preventDefault();
@@ -14,10 +18,16 @@ const SignupForm = () => {
             const { data } = await signUp({
                 variables: { email, password },
             });
+            if (data) {
+                login(data.signUp.token);
+                navigate('/');
+            }
         } catch (err) {
             console.error('Error signing up: ', err);
+            setErrorMessage(err.message || 'An error occurred during signup.');
         }
     };
+  
 
     return (
         
@@ -56,6 +66,7 @@ const SignupForm = () => {
                     >
                         Create your account
                     </button>
+                    {errorMessage && <div className="error-message">{errorMessage}</div>}
                 </form>
             </div>
         </div>
