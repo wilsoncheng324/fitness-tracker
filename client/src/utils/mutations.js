@@ -1,4 +1,4 @@
-import { gql } from '@applo/client';
+import { gql } from '@apollo/client';
 
 export const SIGN_UP = gql`
     mutation signUp($name: String!, $username: String!, $email: String!, $password: String!) {
@@ -13,7 +13,7 @@ export const SIGN_UP = gql`
       }
 `;
 
-export const SIGN_IN = gql `{
+export const SIGN_IN = gql `
     mutation signIn($username: String!, $password: String!) {
         signIn(username: $username, password: $password) {
           token
@@ -23,10 +23,10 @@ export const SIGN_IN = gql `{
           }
         }
       }
-}
+
 `;
 
-export const ADD_ACTIVITY = gql `{
+export const ADD_ACTIVITY = gql `
     mutation addActivity($userId: ID!, $workout: String!, $reps: Int!, $workoutTime: Int!, $date: String!) {
         addActivity(userId: $userId, workout: $workout, reps: $reps, workoutTime: $workoutTime, date: $date) {
           _id
@@ -38,11 +38,11 @@ export const ADD_ACTIVITY = gql `{
           }
         }
       }
-}
+
 `;
 
 
-export const REMOVE_ACTIVITY = gql `{
+export const REMOVE_ACTIVITY = gql `
     mutation removeActivity($userId: ID!, $workout: String!, $reps: Int!, $workoutTime: Int!, $date: String!) {
         removeActivity(userId: $userId, workout: $workout, reps: $reps, workoutTime: $workoutTime, date: $date) {
           _id
@@ -55,5 +55,5 @@ export const REMOVE_ACTIVITY = gql `{
         }
       }
       
-}
+
 `;
