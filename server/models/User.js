@@ -4,7 +4,6 @@ const userSchema = new Schema({
     name: {
       type: String,
       required: true, 
-      unique: true,
       trim: true,
     },
     username: {
@@ -16,7 +15,7 @@ const userSchema = new Schema({
         type: String,
         required: true,
         unique: true,
-        match: [/.+@.+\..+/, 'Must use a valid email address'],
+        match: [/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/, 'Must use a valid email address'],
     },
     password: {
         type: String,
@@ -34,7 +33,7 @@ const userSchema = new Schema({
           type: Number,
           required: true
         },
-        workoutTime: {
+        workoutDuration: {
             type: Number,
             required: true
         },

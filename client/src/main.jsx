@@ -12,8 +12,8 @@ import AddActivity from './pages/AddActivity.jsx'
 import Dashboard from './pages/Dashboard.jsx'
 import StartExercise from './pages/StartExercise.jsx'
 import Workout from './pages/Workout.jsx'
-import Login from './pages/Login.jsx'
-import Signup from './pages/Signup.jsx'
+import Login from './pages/loginform.jsx'
+import Signup from './pages/signupform.jsx'
 
 import { ApolloClient, InMemoryCache } from '@apollo/client';
 const uri = 'http://localhost:3001/graphql';
@@ -45,10 +45,10 @@ const router = createBrowserRouter([ // define the routes
         path: "/workout",
         element: <Workout />,
       }, {
-        path: "/login",
+        path: "/loginform",
         element: <Login />,
       }, {
-        path: "/signup",
+        path: "/signupform",
         element: <Signup />,
       },
     ]
@@ -56,6 +56,10 @@ const router = createBrowserRouter([ // define the routes
 ]);
 ReactDOM.createRoot(document.getElementById('root')).render(
   <ApolloProvider client={client}>
+
     <RouterProvider router={router} />
     </ApolloProvider>
+
+  <RouterProvider router={router} />
+  </ApolloProvider>
 )

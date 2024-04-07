@@ -2,9 +2,9 @@ const {AuthenticationError} = require('apollo-server-express');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const { User } = require('../models');
+require('dotenv').config();
 
-
-const JWT_SECRET = 'super_secret_key';
+const JWT_SECRET = process.env.JWT_SECRET;
 
 const resolvers = {
   Query: {
