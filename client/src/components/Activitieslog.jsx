@@ -1,4 +1,4 @@
-export default function Activitieslog({ date, activity, duration, weight, edit, cals }) {
+export default function Activitieslog({ date, activity, duration, weight, edit }) {
 
     return (
 
