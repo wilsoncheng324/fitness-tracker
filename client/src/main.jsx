@@ -56,6 +56,10 @@ const router = createBrowserRouter([ // define the routes
 ]);
 ReactDOM.createRoot(document.getElementById('root')).render(
   <ApolloProvider client={client}>
+
+    <RouterProvider router={router} />
+    </ApolloProvider>
+
   <RouterProvider router={router} />
   </ApolloProvider>
 )
