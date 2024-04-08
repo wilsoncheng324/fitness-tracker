@@ -1,9 +1,9 @@
 const jwt = require('jsonwebtoken');
-const JWT_SECRET = 'super_secret_key'; // @TODO: Good job changing this from the default. Next level up will be to pull this from process.ENV.JWT_SECRET environment variable using .env file
-
-// Function to sign the token
-const signToken = ({ email, _id }) => jwt.sign({ email, _id }, JWT_SECRET, { expiresIn: '1d' });
-
+const secret = 'super_secret_key'; 
+function signToken({ email, _id }) {
+  const payload = { email, _id };
+  return jwt.sign({ data: payload }, secret, { expiresIn: "1d" });
+};
 // Middleware to verify token and attach user to the context
 const authMiddleware = (req) => {
   let token = req.headers.authorization;
@@ -12,7 +12,7 @@ const authMiddleware = (req) => {
     token = token.split(' ')[1];
     
     try {
-        const decoded = jwt.verify(token, JWT_SECRET);
+        const decoded = jwt.verify(token, secret);
         return { user: { _id: decoded._id } };
     } catch (e) {
       console.error('Invalid JWT token');

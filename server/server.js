@@ -9,7 +9,6 @@ const path = require('path');
 const { typeDefs, resolvers } = require('./schemas');
 const db = require('./config/connection');
 
-const JWT_SECRET = process.env.JWT_SECRET;
 const PORT = process.env.PORT || 3001;
 const server = new ApolloServer({
   typeDefs,
