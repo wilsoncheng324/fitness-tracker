@@ -33,6 +33,7 @@ const Profile = () => { // get the id from the URL
         <Userprofilecard user={user} />
         <CompletedWO user={user} />
         <Activitieslog user={user} />
+        123
         </div>
     );
 }
