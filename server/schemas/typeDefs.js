@@ -15,8 +15,8 @@ const typeDefs = `
   type Activity {
     _id: ID
     name: String
-    reps: Int
-    workoutDuration: Int
+    reps: String
+    workoutDuration: String
     dateCreated: String
   }
 
@@ -33,8 +33,8 @@ const typeDefs = `
   type Mutation {
     signUp(email: String!, password: String!): AuthPayload
     signIn(email: String!, password: String!): AuthPayload    
-    addActivity(userId: ID!, name: String! reps: Int!, workoutDuration: Int!): User
-    # removeActivity(userId: ID!, workout: String! reps: Int!, workoutTime: Int!, date: String!): User
+    addActivity(userId: ID!, name: String! reps: String!, workoutDuration: String!): User
+    # removeActivity(userId: ID!, workout: String! reps: String!, workoutTime: String!, date: String!): User
     logOut: Boolean
   }
 `;

@@ -26,7 +26,7 @@ export const SIGN_IN = gql `
 `;
 
 export const ADD_ACTIVITY = gql `
-    mutation addActivity($userId: ID!, $name: String!, $reps: Int!, $workoutDuration: Int!) {
+    mutation addActivity($userId: ID!, $name: String!, $reps: String!, $workoutDuration: String!) {
       addActivity(userId: $userId, name: $name, reps: $reps, workoutDuration: $workoutDuration) {
         _id
         activities {
@@ -42,7 +42,7 @@ export const ADD_ACTIVITY = gql `
 
 
 export const REMOVE_ACTIVITY = gql `
-    mutation removeActivity($userId: ID!, $workout: String!, $reps: Int!, $workoutTime: Int!, $date: String!) {
+    mutation removeActivity($userId: ID!, $workout: String!, $reps: String!, $workoutTime: String!, $date: String!) {
         removeActivity(userId: $userId, workout: $workout, reps: $reps, workoutTime: $workoutTime, date: $date) {
           _id
           activities {

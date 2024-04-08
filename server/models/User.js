@@ -49,11 +49,11 @@ const userSchema = new Schema({
           trim: true,
         },
         reps: {
-          type: Number,
+          type: String,
           required: true
         },
         workoutDuration: {
-            type: Number,
+            type: String,
             required: true
         },
         dateCreated: {

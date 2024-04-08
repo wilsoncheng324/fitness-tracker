@@ -90,12 +90,9 @@
 
 //     );
 // }
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { useMutation } from '@apollo/client';
+
 import { useQuery } from '@apollo/client';
-import { ADD_ACTIVITY } from '../utils/mutations';
-import { QUERY_PROFILES } from '../utils/queries';
+import { QUERY_PROFILES} from '../utils/queries';
 import AuthService from '../utils/auth';
 
 
@@ -111,9 +108,9 @@ function Activitieslog() {
     const activities = userProfile.activities;
 
     return (
-        <div>
+        <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
             <h2 className="mb-2 text-lg font-semibold text-gray-900 dark:text-white">Activities Log</h2>
-            <ol className="max-w-md space-y-1 text-gray-500 list-none list-inside dark:text-gray-400">
+            <ol className="p-3 space-y-1 text-sm text-gray-700 dark:text-gray-200">
                 {activities.map((activity, index) => (
                     <li key={activity._id}>
                         <span>{index + 1}.</span> {/* Display the order number */}
@@ -126,29 +123,6 @@ function Activitieslog() {
             </ol>
         </div>
     );
-
-
-    // return (
-    //     <div>
-            
-    //         <h2 className="mb-2 text-lg font-semibold text-gray-900 dark:text-white">Activities Log</h2>
-    //         <ul className="max-w-md space-y-1 text-gray-500 list-none list-inside dark:text-gray-400">
-    //             <li>
-    //                 Date: 
-    //             </li>
-    //             <li>
-    //                 Activity: 
-    //             </li>
-    //             <li>
-    //                 Reps:
-    //             </li>
-    //             <li>
-    //                 Workout Duration:
-    //             </li>
-    //         </ul>
-
-    //     </div>
-    // );
 };
 
 export default Activitieslog;
