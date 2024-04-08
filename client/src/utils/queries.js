@@ -20,13 +20,11 @@ export const QUERY_PROFILES = gql`
     users {
       _id
       email
-      name
-     
       activities {
-        workoutTime
-        workout
+        dateCreated
+        name
         reps
-        date
+        workoutDuration
       }
     }
   }
@@ -41,8 +39,8 @@ export const QUERY_ME = gql`
       email
       activities {
         dateCreated
-        reps
         name
+        reps
         workoutDuration
       }
     }

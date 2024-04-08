@@ -1,32 +1,45 @@
-import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { QUERY_PROFILES } from '../utils/queries';
+import Activitieslog from '../components/Activitieslog';
+import AuthService from '../utils/auth';
 
 const Activity = () => {
-    const { userId } = useParams();
+  const loggedIn = AuthService.loggedIn();
+  if (!loggedIn) {
+    return <p>Please log in first</p>;
+  } 
+
+
+  const getProfile = AuthService.getProfile();
   
-    const { loading, data } = useQuery(QUERY_PROFILES, {
-      variables: { userId: userId },
-    });
+  const { loading, error, data } = useQuery(QUERY_PROFILES);
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error.message}</p>;
+
+  const currentUserId = getProfile.data._id;
+
+  const userProfile = data.users.find(currentUser => currentUser._id === currentUserId);
   
-    const user = data?.user || {};
   
-    if (loading) {
-      return <div>Loading...</div>;
-    }
-    return (
+
+  return (
       <div>
-        <h2 className="card-header">
-          {user.name}'s friends have endorsed these skills...
-        </h2>
-  
-        {/* {profile.skills?.length > 0 && <SkillsList skills={profile.skills} />}
-  
-        <div className="my-4 p-4" style={{ border: '1px dotted #1a1a1a' }}>
-          <SkillForm profileId={profile._id} />
-        </div> */}
+          
+          {/* Render profile data */}
+          <div>
+              <h2>Profile Info</h2>
+              <p>Name: {userProfile.name}</p>
+              <p>Email: {userProfile.email}</p>
+              {/* Render other profile information as needed */}
+          </div>
+          {/* Render Activitieslog component */}
+          <Activitieslog userProfile={userProfile} />
       </div>
-    );
+  );
+  
+    
+  
   };
 
   export default Activity;
