@@ -10,8 +10,6 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import HomePage from './pages/HomePage.jsx'
 import AddActivity from './pages/AddActivity.jsx'
 import Dashboard from './pages/Dashboard.jsx'
-import StartExercise from './pages/StartExercise.jsx'
-import Workout from './pages/Workout.jsx'
 import Login from './pages/loginform.jsx'
 import Signup from './pages/signupform.jsx'
 
@@ -38,12 +36,6 @@ const router = createBrowserRouter([ // define the routes
       }, {
         path: "/addactivity",
         element: <AddActivity />,
-      }, {
-        path: "/startexercise",
-        element: <StartExercise />,
-      }, {
-        path: "/workout",
-        element: <Workout />,
       }, {
         path: "/loginform",
         element: <Login />,
