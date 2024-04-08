@@ -1,16 +1,16 @@
 const { Schema, model } = require('mongoose');
-
+const dateFormat = require('../utils/dateFormat');
 const userSchema = new Schema({
     name: {
       type: String,
       required: false, 
       trim: true,
     },
-    username: {
-        type: String,
-        required: false, 
-        unique: true
-      },
+    // username: {
+    //     type: String,
+    //     required: false, 
+    //     unique: false
+    //   },
     email: {
         type: String,
         required: true,
@@ -22,9 +22,28 @@ const userSchema = new Schema({
         required: true,
         minlength: 8
       },
+    age: {
+      type: String,
+      max: 50
+    },
+    weight: {
+      type: String,
+      min: 10,
+      max: 300
+    },
+    height_feet: {
+      type: String,
+      min:1,
+      max: 8
+    },
+    height_inch: {
+      type: String,
+      min: 1,
+      max: 12
+    },
     activities: [
       { 
-        workout:{
+        name:{
           type: String,
           required: true,
           trim: true,
@@ -37,9 +56,10 @@ const userSchema = new Schema({
             type: Number,
             required: true
         },
-        date: {
+        dateCreated: {
             type: Date,
-            default: Date.now
+            default: Date.now,
+            get: (timestamp) => dateFormat(timestamp),
         },
         
       },

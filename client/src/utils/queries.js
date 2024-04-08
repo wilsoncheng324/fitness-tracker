@@ -1,19 +1,33 @@
 import { gql } from '@apollo/client';
 
+export const QUERY_ACTIVITIES = gql `
+  query me {
+    me {
+      _id
+      activities {
+        dateCreated
+        name
+        reps
+        workoutDuration
+      }
+    }
+  }
+`;
+
+
 export const QUERY_PROFILES = gql`
   query allUsers {
     users {
-        _id
-        email
-        name
-        password
-        username
-        activities {
-          workoutTime
-          workout
-          reps
-          date
-        }
+      _id
+      email
+      name
+      username
+      activities {
+        workoutTime
+        workout
+        reps
+        date
+      }
     }
   }
 `;
@@ -21,17 +35,16 @@ export const QUERY_PROFILES = gql`
 export const QUERY_ME = gql`
   query me {
     me {
-        _id
-        name
-        username
-        email
-        password
-        activities {
-          date
-          reps
-          workout
-          workoutTime
-        }
+      _id
+      name
+      username
+      email
+      activities {
+        date
+        reps
+        workout
+        workoutTime
+      }
     }
   }
 `;
