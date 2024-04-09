@@ -1,6 +1,7 @@
 import { useQuery } from '@apollo/client';
 import { QUERY_PROFILES } from '../utils/queries';
 import Activitieslog from '../components/Activitieslog';
+import AddActivityCard from '../components/AddActivitycard';
 import AuthService from '../utils/auth';
 
 const Activity = () => {
@@ -20,11 +21,11 @@ const Activity = () => {
   const currentUserId = getProfile.data._id;
 
   const userProfile = data.users.find(currentUser => currentUser._id === currentUserId);
-  
-  
 
   return (
-      <div>
+    
+    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+      <div >
           
           {/* Render profile data */}
           <div>
@@ -36,6 +37,10 @@ const Activity = () => {
           {/* Render Activitieslog component */}
           <Activitieslog userProfile={userProfile} />
       </div>
+      <div>
+          <AddActivityCard />
+      </div>
+    </div>
   );
   
     
