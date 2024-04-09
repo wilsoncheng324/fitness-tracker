@@ -39,6 +39,18 @@ export const ADD_ACTIVITY = gql `
 
 `;
 
+export const UPDATE_PROFILE = gql `
+  mutation Mutation($userId: ID!, $name: String, $age: String, $weight: String, $height_feet: String, $height_inch: String) {
+    updateProfile(userId: $userId, name: $name, age: $age, weight: $weight, height_feet: $height_feet, height_inch: $height_inch) {
+      _id
+      age
+      height_feet
+      height_inch
+      name
+      weight
+    }
+  }
+`
 
 export const REMOVE_ACTIVITY = gql `
     mutation removeActivity($userId: ID!, $workout: String!, $reps: String!, $workoutTime: String!, $date: String!) {
