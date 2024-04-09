@@ -1,9 +1,10 @@
 require('dotenv').config();
-const {AuthenticationError, signToken} = require('../utils/auth');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const { User } = require('../models');
-// const JWT_SECRET = process.env.JWT_SECRET;
+const JWT_SECRET = process.env.JWT_SECRET;
+const { AuthenticationError } = require('apollo-server-express');
+const { signToken, authMiddleware } = require('../utils/auth');
 
 const resolvers = {
   Query: {
