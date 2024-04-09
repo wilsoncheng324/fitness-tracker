@@ -11,7 +11,7 @@ class AuthService {
   }
 
   isTokenExpired(token) {
-    const decoded = decode(token);
+    const decoded = decode(token); // decoding should only happen in frontend 
     if (decoded.exp < Date.now() / 1000) {
       localStorage.removeItem('id_token');
       return true;

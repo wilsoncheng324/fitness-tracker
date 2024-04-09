@@ -16,6 +16,7 @@ const Activity = () => {
     }
     return (
       <div>
+        
         <h2 className="card-header">
           {user.name}'s friends have endorsed these skills...
         </h2>

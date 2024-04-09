@@ -14,14 +14,12 @@ export const QUERY_ACTIVITIES = gql `
   }
 `;
 
-
 export const QUERY_PROFILES = gql`
   query allUsers {
     users {
       _id
       email
       name
-     
       activities {
         workoutTime
         workout
@@ -37,7 +35,6 @@ export const QUERY_ME = gql`
     currentUser {
       _id
       name
-     
       email
       activities {
         dateCreated

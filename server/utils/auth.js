@@ -11,23 +11,21 @@ const authMiddleware = ({ req }) => {
 
   let token = req.body.token || req.query.token || req.headers.authorization;
 
-  if (req.headers.authorization) {
+  if (req.headers.authorization) { // 
     console.log(token)
     token = token.split(' ').pop().trim();
     console.log(token)
   }
 
-  if (!token) {
+  if (!token) { // if token is invalid 
     return req;
   }
-
   try {
     const { data } = jwt.verify(token, secret, { maxAge: expiration });
     req.user = data;
   } catch (err) {
     console.log('Invalid token');
   }
-
   return req;
 };
 

@@ -12,8 +12,8 @@ const resolvers = {
     },
     currentUser: async (_, args, context) => {
       console.log(context);
-      if (context.user) {
-        const user = await User.findById(context.user._id);
+      if (context.user) { // if user is logged in find user by id
+        const user = await User.findById(context.user._id); // find user by id
         console.log(user);
         return user;
   }
@@ -36,11 +36,11 @@ const resolvers = {
       const user = await User.create({ email, password: hashedPassword });
       // const savedUser = await user.save();
       console.log(user)
-      const token = signToken(user);
+      const token = signToken(user); // sign token for user to be authenticated
       
       return { token, user };
     },
-    signIn: async (_, { email, password }) => {
+    signIn: async (_, { email, password }) => { // signs in user if email and password match
       const user = await User.findOne({ email });
       if (!user) {
         throw new AuthenticationError('No user found with this email');
