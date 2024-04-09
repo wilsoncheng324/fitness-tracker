@@ -1,10 +1,12 @@
-const { GraphQLError } = require('graphql');
-
+require('dotenv').config();
+// const { GraphQLError } = require('graphql');
+// const { AuthenticationError } = require('apollo-server-express');
 const jwt = require('jsonwebtoken');
-const secret = 'super_secret_key';
+const JWT_SECRET = process.env.JWT_SECRET;
+
 function signToken({ email, _id }) {
   const payload = { email, _id };
-  return jwt.sign({ data: payload }, secret, { expiresIn: "1d" });
+  return jwt.sign({ data: payload }, JWT_SECRET, { expiresIn: "1d" });
 };
 // Middleware to verify token and attach user to the context
 const authMiddleware = ({ req }) => {
@@ -33,10 +35,5 @@ const authMiddleware = ({ req }) => {
 
 module.exports = {
   signToken,
-  authMiddleware,
-  AuthenticationError: new GraphQLError('Could not authenticate user.', {
-    extensions: {
-      code: 'UNAUTHENTICATED',
-    },
-  }),
+  authMiddleware
 };
