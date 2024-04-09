@@ -105,14 +105,16 @@ function Activitieslog() {
     const currentUserId = getProfile.data._id;
     // Find the user profile based on the provided email
     const userProfile = data.users.find(user => user._id === currentUserId);
+    if (!userProfile) return <p>User profile not found within the data.</p>;
     const activities = userProfile.activities;
+    console.log(activities.map(activity => activity._id));
 
     return (
         <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
             <h2 className="mb-2 text-lg font-semibold text-gray-900 dark:text-white">Activities Log</h2>
             <ol className="p-3 space-y-1 text-sm text-gray-700 dark:text-gray-200">
                 {activities.slice().reverse().map((activity, index) => (
-                    <li key={activity._id}>
+                    <li key={`activity._id-${index}`}>
                         <span>{index + 1}.</span> {/* Display the order number */}
                         <span>Date: {activity.dateCreated}</span><br />
                         <span>Activity: {activity.name}</span><br />
