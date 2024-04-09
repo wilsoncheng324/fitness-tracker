@@ -36,6 +36,7 @@ const typeDefs = `
     addActivity(userId: ID!, name: String! reps: String!, workoutDuration: String!): User
     # removeActivity(userId: ID!, workout: String! reps: String!, workoutTime: String!, date: String!): User
     logOut: Boolean
+    updateProfile(userId: ID!, name: String, age: String, weight: String, height_feet: String, height_inch: String): User
   }
 `;
 

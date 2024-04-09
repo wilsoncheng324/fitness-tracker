@@ -78,6 +78,28 @@ const resolvers = {
       );
       
     },
+    updateProfile: async (parent, { userId, name, age, weight, height_feet, height_inch }) => {
+
+      const profile = {
+        name: name,
+        age: age,
+        weight: weight,
+        height_feet: height_feet,
+        height_inch: height_inch
+      };
+
+      return User.findOneAndUpdate(
+        { _id: userId },
+        {
+          $set: profile,
+        },
+        {
+          new: true,
+          runValidators: true,
+        }
+      );
+      
+    },
     // removeActivity: async (parent, { userId, workout, reps, workoutTime, date }) => {
     //   const activity = {
     //     workout: workout,

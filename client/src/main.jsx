@@ -51,6 +51,7 @@ import { AuthProvider } from './contexts/AuthContext';
 import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
+import Userinputdata from './components/Userinputdata.jsx'
 import HomePage from './pages/HomePage.jsx'
 import Activity from './pages/Activity.jsx'
 import Dashboard from './pages/Dashboard.jsx'
@@ -96,6 +97,9 @@ const router = createBrowserRouter([ // define the routes
       }, {
         path: "/signupform",
         element: <Signup />,
+      }, {
+        path: "/Userinputdata",
+        element: <Userinputdata />,
       },
     ]
   },

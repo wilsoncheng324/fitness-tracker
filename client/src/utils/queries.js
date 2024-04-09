@@ -20,6 +20,11 @@ export const QUERY_PROFILES = gql`
     users {
       _id
       email
+      name
+      age
+      weight
+      height_feet
+      height_inch
       activities {
         dateCreated
         name
