@@ -41,9 +41,7 @@ const Activity = () => {
       </div>
     </div>
   );
-  
-    
-  
+
   };
 
   export default Activity;
