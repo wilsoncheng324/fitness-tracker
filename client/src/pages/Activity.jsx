@@ -10,7 +10,6 @@ const Activity = () => {
     return <p>Please log in first</p>;
   } 
 
-
   const getProfile = AuthService.getProfile();
   
   const { loading, error, data } = useQuery(QUERY_PROFILES);
@@ -42,9 +41,7 @@ const Activity = () => {
       </div>
     </div>
   );
-  
-    
-  
+
   };
 
   export default Activity;

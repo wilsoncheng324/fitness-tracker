@@ -7,6 +7,7 @@ import { useQuery } from "@apollo/client";
 import { QUERY_PROFILES, QUERY_ME } from "../utils/queries";
 
 import Auth from "../utils/auth";
+import { useAuth } from "../contexts/AuthContext";
 
 const Profile = () => { // get the id from the URL
     
