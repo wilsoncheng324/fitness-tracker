@@ -17,7 +17,7 @@ const typeDefs = `
     name: String
     reps: String
     workoutDuration: String
-    dateCreated: String
+    dateCreated: date
   }
 
   type AuthPayload {
