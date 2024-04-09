@@ -20,17 +20,20 @@ function Header() {
                     Embark on your journey towards better health and fitness with our cutting-edge fitness trackers. Powered by advanced technology and AI, our trackers offer scalable solutions tailored to your needs. Track your progress, set goals, and optimize your workouts for maximum efficiency. 
                     Experience the future of fitness with us at Flowbite, where innovation meets performance.
                 </p>
-                <HomePage />
+                
             </div>
-            {/* <div> 
+            
+            <div> 
             {Auth.loggedIn() ? (
+                
                 <>
+                {/* <HomePage /> */}
                 <Link className="btn btn-lg btn-info m-2" to="/">
                         Homepage
                     </Link>
-                <Link className="btn btn-lg btn-info m-2" to="/me">
+                {/* <Link className="btn btn-lg btn-info m-2" to="/me">
                     {Auth.getProfile().data.name}'s profile
-                </Link>
+                </Link> */}
                 <button className="btn btn-lg btn-light m-2" onClick={logout}>
                     Logout
                 </button>
@@ -38,16 +41,16 @@ function Header() {
                 ) : (
                 <>  
                     
-                    <Link className="btn btn-lg btn-info m-2" to="/loginform">
+                    {/* <Link className="btn btn-lg btn-info m-2" to="/loginform">
                         Login
                     </Link>
                     <Link className="btn btn-lg btn-light m-2" to="/signupform">
                         Signup
-                    </Link>
+                    </Link> */}
                     
                 </>
                 )}
-            </div>  */}
+            </div> 
         </div> 
     )
 }

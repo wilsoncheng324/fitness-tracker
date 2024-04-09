@@ -111,7 +111,7 @@ function Activitieslog() {
         <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
             <h2 className="mb-2 text-lg font-semibold text-gray-900 dark:text-white">Activities Log</h2>
             <ol className="p-3 space-y-1 text-sm text-gray-700 dark:text-gray-200">
-                {activities.map((activity, index) => (
+                {activities.slice().reverse().map((activity, index) => (
                     <li key={activity._id}>
                         <span>{index + 1}.</span> {/* Display the order number */}
                         <span>Date: {activity.dateCreated}</span><br />
