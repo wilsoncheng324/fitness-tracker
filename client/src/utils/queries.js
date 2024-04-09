@@ -31,11 +31,11 @@ export const QUERY_PROFILES = gql`
 `;
 
 export const QUERY_ME = gql`
-  query me {
-    me {
+  query currentUser {
+    currentUser {
       _id
       name
-      username
+     
       email
       activities {
         dateCreated

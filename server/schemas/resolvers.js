@@ -3,8 +3,6 @@ const {AuthenticationError, signToken} = require('../utils/auth');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const { User } = require('../models');
-
-
 // const JWT_SECRET = process.env.JWT_SECRET;
 
 const resolvers = {
@@ -13,8 +11,11 @@ const resolvers = {
       return await User.find({});
     },
     currentUser: async (_, args, context) => {
+      console.log(context);
       if (context.user) {
-        return await User.findById(context.user._id);
+        const user = await User.findById(context.user._id);
+        console.log(user);
+        return user;
   }
     throw new AuthenticationError('Not logged in');
     },
@@ -32,12 +33,12 @@ const resolvers = {
       }
 
       const hashedPassword = await bcrypt.hash(password, 10);
-      const user = new User({ email, password: hashedPassword });
-      const savedUser = await user.save();
-      
+      const user = await User.create({ email, password: hashedPassword });
+      // const savedUser = await user.save();
+      console.log(user)
       const token = signToken(user);
       
-      return { token, user: savedUser };
+      return { token, user };
     },
     signIn: async (_, { email, password }) => {
       const user = await User.findOne({ email });
