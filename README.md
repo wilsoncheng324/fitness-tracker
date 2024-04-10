@@ -18,8 +18,8 @@ The site allows the user to sign in or sign up as a new user, then start a worko
 
 ## Visuals
 The User Dashboard displays the user's profile info along with their activity history and detailed activity log information. 
-![Alt text](<Screenshot 2024-04-10 at 11.25.48 AM.png>)
-![Alt text](<Screenshot 2024-04-10 at 12.20.41 PM.png>)
+![Alt text](<./assets/Screenshot 2024-04-10 at 11.25.48 AM.png>)
+![Alt text](<./assets/Screenshot 2024-04-10 at 12.20.41 PM.png>)
 
 
 ## Installation
