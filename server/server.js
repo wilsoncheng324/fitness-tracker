@@ -13,7 +13,6 @@ const PORT = process.env.PORT || 3001 ;
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  // context: authMiddleware
 });
 
 const app = express();
@@ -24,10 +23,7 @@ const startApolloServer = async () => {
   app.use(express.json());
 
   app.use('/graphql', expressMiddleware(server, {
-    // cors: {
-    //   origin: '*',
-    //   credentials: true 
-    // },
+
     context: authMiddleware
   }));
 

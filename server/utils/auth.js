@@ -1,9 +1,7 @@
 require('dotenv').config();
-// const { GraphQLError } = require('graphql');
-// const { AuthenticationError } = require('apollo-server-express');
 const jwt = require('jsonwebtoken');
 const JWT_SECRET = process.env.JWT_SECRET;
-// const JWT_SECRET = "super_secret_key";
+
 
 function signToken({ email, _id }) {
   const payload = { email, _id };

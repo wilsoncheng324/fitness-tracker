@@ -1,8 +1,5 @@
 import { Link } from 'react-router-dom';
 import Auth from '../utils/auth';
-import HomePage from '../pages/HomePage';
-
-
 
 function Header() {
     const logout = (event) => {
@@ -27,26 +24,18 @@ function Header() {
             {Auth.loggedIn() ? (
                 
                 <>
-                {/* <HomePage /> */}
+
                 <Link className="btn btn-lg btn-info m-2" to="/">
                         Homepage
                     </Link>
-                {/* <Link className="btn btn-lg btn-info m-2" to="/me">
-                    {Auth.getProfile().data.name}'s profile
-                </Link> */}
+
                 <button className="btn btn-lg btn-light m-2" onClick={logout}>
                     Logout
                 </button>
                 </>
                 ) : (
                 <>  
-                    
-                    {/* <Link className="btn btn-lg btn-info m-2" to="/loginform">
-                        Login
-                    </Link>
-                    <Link className="btn btn-lg btn-light m-2" to="/signupform">
-                        Signup
-                    </Link> */}
+
                     
                 </>
                 )}
