@@ -123,6 +123,6 @@ function Activitieslog() {
             </ol>
         </div>
     );
-};
+}
 
 export default Activitieslog;
