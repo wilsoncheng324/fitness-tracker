@@ -24,17 +24,19 @@ const Activity = () => {
   return (
     
     <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-      <div >
+      <div>
           
           {/* Render profile data */}
-          <div>
-              <h2>Profile Info</h2>
+          
+              {/* <h2>Profile Info</h2>
               <p>Name: {userProfile.name}</p>
-              <p>Email: {userProfile.email}</p>
+              <p>Email: {userProfile.email}</p> */}
               {/* Render other profile information as needed */}
-          </div>
+          
           {/* Render Activitieslog component */}
-          <Activitieslog userProfile={userProfile} />
+          
+           <Activitieslog userProfile={userProfile} />
+           
       </div>
       <div>
           <AddActivityCard />
