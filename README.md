@@ -1,5 +1,5 @@
 ## Fitness-tracker
-A secure website that users can log, save and track their workout activities.   
+A secure website that users can log, save and track their workout activites.   
 
 ## Table of Contents
   - [Description](#project-description)
@@ -44,7 +44,6 @@ wilsoncheng0324@gmail.com
 Open to suggestions!
 [MMullen4](https://github.com/MMullen4)
 [wilson324](https://github.com/wilsoncheng324)
-[fer]
 
 
 ## Authors and acknowledgment
