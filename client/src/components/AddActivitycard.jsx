@@ -92,8 +92,8 @@ function AddActivityCard() {
 
 
     return (
-        <div style={{ maxWidth: '400px', margin: '0 auto', color: 'balck' }}>
-            <h3 style={{ marginBottom: '1rem', textAlign: 'center' }}>Add activity</h3>
+        <div style={{ maxWidth: '400px', margin: '0 auto' }} className="max-w-m p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <h3 className="text-center text-2xl text-gray-900 dark:text-white ">Add activity</h3>
             <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column' }}>
                 <div >
                     <div>
