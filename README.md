@@ -1,5 +1,5 @@
 ## Fitness-tracker
-A website to log, save and track your workouts. 
+A secure website that users can log, save and track their workout activites.   
 
 ## Table of Contents
   - [Description](#project-description)
@@ -18,14 +18,19 @@ The site allows the user to sign in or sign up as a new user, then start a worko
 
 ## Visuals
 The User Dashboard displays the user's profile info along with their activity history and detailed activity log information. 
-
+![Alt text](<Screenshot 2024-04-10 at 11.25.48 AM.png>)
+![Alt text](<Screenshot 2024-04-10 at 11.26.05 AM.png>)
 
 ## Installation
 The site employs front-end React and back-end GraphQL.  It is deployed on Render with a MongoDB database.  Styling is enhanced through Tailwind and Flowbite templates.
 
+To install url, clone this link -
+git@github.com:wilsoncheng324/fitness-tracker.git
+
+User needs to run "npm install" in an integrated terminal within a root directory to install all the necessary components.  
 
 ## Usage
-
+User can login through an exiting account or create a new account.  User is taken to a home page, from where they can access adding new workout activites or review a log of previously added activities.  A dashboard shows user info and workout history.  
 
 ## Support
 Please reach out to us with any questions - 
