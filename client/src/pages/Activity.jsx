@@ -7,7 +7,7 @@ import AuthService from '../utils/auth';
 const Activity = () => {
   const loggedIn = AuthService.loggedIn();
   if (!loggedIn) {
-    return <p>Please log in first</p>;
+    return <p className="text-center text-2xl text-gray-900 dark:text-white ">Please log in first</p>;
   } 
 
   const getProfile = AuthService.getProfile();
@@ -26,14 +26,6 @@ const Activity = () => {
     <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
       <div>
           
-          {/* Render profile data */}
-          
-              {/* <h2>Profile Info</h2>
-              <p>Name: {userProfile.name}</p>
-              <p>Email: {userProfile.email}</p> */}
-              {/* Render other profile information as needed */}
-          
-          {/* Render Activitieslog component */}
           
            <Activitieslog userProfile={userProfile} />
            

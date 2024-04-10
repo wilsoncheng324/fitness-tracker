@@ -18,7 +18,7 @@ import Login from './pages/Loginform.jsx'
 import Signup from './pages/Signupform.jsx'
 
 import { ApolloClient, InMemoryCache } from '@apollo/client';
-const uri = 'http://localhost:3001/graphql';
+const uri = '/graphql';
 const client = new ApolloClient({
   uri: uri,
   cache: new InMemoryCache(),
