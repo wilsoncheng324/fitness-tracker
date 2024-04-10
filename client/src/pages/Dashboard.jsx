@@ -30,10 +30,9 @@ const Profile = () => { // get the id from the URL
 
     return (
         <div>
-            <Userprofilecard user={user} />
-            <CompletedWO user={user} />
-            <Activitieslog user={user} />
-            123
+            <Userprofilecard />
+            {/* <CompletedWO />
+            <Activitieslog /> */}
         </div>
     );
 }
