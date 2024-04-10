@@ -13,12 +13,13 @@ import { useAuth } from "../contexts/AuthContext";
 const Profile = () => { 
 
     return (
-        <div>
-           
-            {/* <Userinputdata /> */}
-            <Userprofilecard />
-            {/* <CompletedWO /> */}
-            {/* <Activitieslog /> */}
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+            <div>
+                <Userprofilecard />
+            </div>
+            <div>
+                <CompletedWO />
+            </div>   
         </div>
     );
 }
