@@ -57,4 +57,4 @@ MIT
 
 
 ## Project
-https://fitness-tracker-57xn.onrender.com
+https://fitness-tracker-bvs6.onrender.com/
