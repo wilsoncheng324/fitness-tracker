@@ -10,9 +10,20 @@
   color: inherit;
   text-decoration: none;
   cursor: pointer;
-  background: rgb(255 255 255 / 9%);
+  background: rgba(201, 182, 16, 0.09);
 }
 
 .app a:nth-child(odd) {
-  background: rgb(255 255 255 / 6%);
+  background: rgba(112, 173, 12, 0.06);
+}
+body {
+  background-image: url('https://wallpapercave.com/wp/wp12424948.jpg');
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-position: center center;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
