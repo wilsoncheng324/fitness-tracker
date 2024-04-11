@@ -9,8 +9,8 @@ export default function Navbar() {
         <>
             <div>
                 <h1 className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl">
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">Fitness Tracker - </span>  Achieving Optimal Performance</h1>
-                <p className="text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">Fitness Tracker - </span>    <span className='bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500'>Achieving Optimal Performance</span></h1>
+                <p className="text-slate-100 md:text-2xl" text>
                     Embark on your journey towards better health and fitness with our cutting-edge fitness trackers. Powered by advanced technology and AI, our trackers offer scalable solutions tailored to your needs. Track your progress, set goals, and optimize your workouts for maximum efficiency.
                     Experience the future of fitness with us at Flowbite, where innovation meets performance.
                 </p>
