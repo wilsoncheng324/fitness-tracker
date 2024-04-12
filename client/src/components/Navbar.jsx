@@ -9,7 +9,7 @@ export default function Navbar() {
         <>
             <div>
                 <h1 className="mb-4 text-2xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl" style={{ background: 'gray', opacity: '70%', padding: '30px' }} >
-                    <span className=" bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">Fitness Tracker -</span><span className="bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">Achieving Optimal Performance</span></h1>
+                    <span className=" bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">Fitness Tracker - </span><span className="bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">Achieving Optimal Performance</span></h1>
                 <p className="text-slate-100 md:text-2xl" style={{padding: '50px'}}>
                     Embark on your journey towards better health and fitness with our cutting-edge fitness trackers. Powered by advanced technology and AI, our trackers offer scalable solutions tailored to your needs. Track your progress, set goals, and optimize your workouts for maximum efficiency.
                 </p>

@@ -9,7 +9,7 @@ import { QUERY_PROFILES } from '../utils/queries';
 export default function Userinputdata() {   
     const loggedIn = AuthService.loggedIn();
     if (!loggedIn) {
-        return (<p className="text-center text-2xl text-gray-900 dark:text-white ">Please log in first</p>)
+        return (<p className="text-center text-2xl text-gray-900 dark:text-white " style={{ color: 'white' }}>Please log in first</p>)
     } else if (loggedIn) {
 
     const navigate = useNavigate();
