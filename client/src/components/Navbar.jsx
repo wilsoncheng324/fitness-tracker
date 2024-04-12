@@ -1,4 +1,4 @@
-import { useState } from 'react';
+
 import { Link } from 'react-router-dom';
 import logo from '../assets/logo.png';
 import { useAuth } from '../contexts/AuthContext';
@@ -8,11 +8,10 @@ export default function Navbar() {
     return (
         <>
             <div>
-                <h1 className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl">
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">Fitness Tracker - </span>    <span className='bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500'>Achieving Optimal Performance</span></h1>
-                <p className="text-slate-100 md:text-2xl" text>
+                <h1 className="mb-4 text-2xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl" style={{ background: 'gray', opacity: '70%', padding: '30px' }} >
+                    <span className=" bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">Fitness Tracker - </span><span className="bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">Achieving Optimal Performance</span></h1>
+                <p className="text-slate-100 md:text-2xl" style={{padding: '50px'}}>
                     Embark on your journey towards better health and fitness with our cutting-edge fitness trackers. Powered by advanced technology and AI, our trackers offer scalable solutions tailored to your needs. Track your progress, set goals, and optimize your workouts for maximum efficiency.
-                    Experience the future of fitness with us at Flowbite, where innovation meets performance.
                 </p>
             </div>
             <div className="text-center">
@@ -40,10 +39,6 @@ export default function Navbar() {
                                 </svg>
                                 <span className="ms-3">Home</span>
                             </Link>
-                        </li>
-
-                        <li>
-                          
                         </li>
                         <li>
                             <Link to="/Dashboard" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
