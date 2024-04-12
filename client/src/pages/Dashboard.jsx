@@ -6,7 +6,7 @@ import AuthService from '../utils/auth';
 const Profile = () => { 
     const loggedIn = AuthService.loggedIn();
   if (!loggedIn) {
-    return (<p className="text-center text-2xl text-gray-900 dark:text-white ">Please log in first</p>)
+      return (<p className="text-center text-2xl" style={{ color: 'white' }}>Please log in first</p>)
   } else if (loggedIn) {
     return (
 
